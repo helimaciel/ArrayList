@@ -1,0 +1,48 @@
+/* _Exercício _
+Construa um algoritmo em Java utilizando um ArreyList que:
+ Armazene números inteiros.
+ Adicione, quantos números o usuário quiser, pela entrada do teclado.
+ Coloque como condição saída digitar o número 0 (isso ocorre quando o usuário quiser
+parar de adicionar os números).
+ Imprima a quantidade de números que foram adicionados.
+ Imprima a lista final com os números adicionados.
+ Some todos os números da lista e imprima o resultado.
+ Faça a média dos valores da lista e imprima o resultado. */
+
+import java.util.ArrayList;
+import java.util.Scanner
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        ArrayList<Integer> Lista = new ArrayList();
+        int num, n, soma = 0, media = 0, a;
+
+        do {
+            System.out.println("***Digite  0 quando quiser parar de adiconar valores***");
+            System.out.println(" Digite o valor que desejar");
+            num = in.nextInt();
+            if (num != 0) {
+                Lista.add(num);
+            }
+            soma += num;
+        } while (num != 0);
+        n = Lista.size();
+        media = (int) soma / n;
+        System.out.println("A quantidade de numero inserido foi:" + n);
+        System.out.println("Os valores inseridos foram:");
+        for (int i = 0; i < n; i++) {
+            System.out.println(Lista.get(i));
+        }
+        System.out.println("A soma dos valores digitados foi de :" + soma);
+        System.out.println("A media dos falores é :" + media);
+    }
+
+}
+
+
+
+
+
+
